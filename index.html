@@ -1,63 +1,159 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Only for You🌹</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GES816 – Résultats des transactions</title>
+<style>
+  :root {
+    --fond: #eef3f6;
+    --surface: #ffffff;
+    --encre: #16304a;
+    --discret: #566b7f;
+    --trait: #cddae3;
+    --accent: #1b6f8a;
+    --accent-fonce: #124f64;
+    --survol: #e2f0f5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fond: #0f1c28;
+      --surface: #16293a;
+      --encre: #e6eef4;
+      --discret: #9db1c2;
+      --trait: #2b4256;
+      --accent: #6cc3dd;
+      --accent-fonce: #9ad8ea;
+      --survol: #1e3a4d;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 17px; }
+  body {
+    margin: 0;
+    background: var(--fond);
+    color: var(--encre);
+    font-family: "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  main {
+    max-width: 62rem;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 4rem;
+  }
+  h1 {
+    font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+    font-size: clamp(1.9rem, 4.5vw, 2.8rem);
+    line-height: 1.15;
+    margin: 0 0 .75rem;
+    font-weight: 700;
+    letter-spacing: -.01em;
+  }
+  .intro { color: var(--discret); max-width: 42rem; margin: 0 0 2.5rem; }
+  h2 {
+    font-family: Georgia, "Iowan Old Style", serif;
+    font-size: 1.3rem;
+    margin: 2.5rem 0 .75rem;
+  }
+  .tableau {
+    background: var(--surface);
+    border: 1px solid var(--trait);
+    border-radius: 6px;
+    overflow-x: auto;
+  }
+  table { width: 100%; border-collapse: collapse; min-width: 36rem; }
+  th, td { padding: .9rem 1rem; text-align: left; border-bottom: 1px solid var(--trait); }
+  tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+  thead th { font-weight: 600; color: var(--discret); font-size: .9rem; }
+  tbody th { font-weight: 600; }
+  tbody th small { display: block; font-weight: 400; color: var(--discret); font-size: .85rem; }
+  td a {
+    display: inline-block;
+    padding: .4rem .85rem;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    color: var(--accent-fonce);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: .92rem;
+  }
+  td a:hover { background: var(--survol); }
+  a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: .5rem 1.25rem; }
+  dt { font-weight: 600; }
+  dd { margin: 0; color: var(--discret); }
+  footer { margin-top: 3rem; color: var(--discret); font-size: .9rem; }
+  @media (max-width: 34rem) {
+    dl { grid-template-columns: 1fr; gap: 0; }
+    dd { margin-bottom: .6rem; }
+  }
+</style>
 </head>
-<audio id="myAudio">
-  <source src="La_plus.mp3" type="audio/mp3">
-  Votre navigateur ne supporte pas la balise audio.
-</audio>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-
 <body>
-  <div class="container">
-    <div class="hearts">
-      <div class="heartOne">
-        <div class="left-side"></div>
-        <div class="right-side"></div>
-      </div>
-      <div class="heartTwo">
-        <div class="left-side"></div>
-        <div class="right-side"></div>
-      </div>
-          <div class="heartThree">
-        <div class="left-side"></div>
-        <div class="right-side"></div>
-      </div>
-       <div class="heartFour">
-        <div class="left-side"></div>
-        <div class="right-side"></div>
-      </div>
-       <div class="heartFive">
-       <div class="left-side"></div>
-        <div class="right-side"></div>
-      </div>
-        <div class="heartSix">
-        <div class="left-side"></div>
-        <div class="right-side"></div>
-      </div>
-        <div class="heartSeven">
-        <div class="left-side"></div>
-        <div class="right-side"></div>
-      </div>
-        <div class="heartheight">
-        <div class="left-side"></div>
-        <div class="right-side"></div>
-      </div>
-      </div>
-         <div class="heartNine">
-          <div class="left-side"></div>
-          <div class="right-side"></div>
-      </div>
-    <h1>Joyeuse Saint Valentin</h1>
-    <p>Pour mon miel !! ❤️ 🍯</p>
-    <button id="heartBtn">Touche ici pour voir la suite !! </button>
-    <div id="message" class="hidden"></div>
-    <img id="tempImage" src="IMG_8611.jpg" alt="Message d'amour" class="hidden-image">
+<main>
+  <h1>Résultats des transactions par stratégie</h1>
+  <p class="intro">
+    GES816 – Méthodes et systèmes d’investissement. Chaque lien ouvre le rapport
+    de transactions d’une action testée avec une stratégie, sur des données quotidiennes.
+    Les rapports s’ouvrent dans un nouvel onglet.
+  </p>
+
+  <div class="tableau">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Action</th>
+          <th scope="col">RSI</th>
+          <th scope="col">ZLEMA 21</th>
+          <th scope="col">Keltner (KC)</th>
+          <th scope="col">OBV</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <th scope="row">CNQ.TO<small>Canadian Natural Resources</small></th>
+        <td><a href="Trades_CNQ.TO_1d_RSI_2026-11-03.html" target="_blank" rel="noopener">Ouvrir</a></td>
+        <td><a href="Trades_CNQ.TO_1d_ZLEMA21_2026-11-03.html" target="_blank" rel="noopener">Ouvrir</a></td>
+        <td><a href="Trades_CNQ.TO_1d_KC_2026-11-03.html" target="_blank" rel="noopener">Ouvrir</a></td>
+        <td><a href="Trades_CNQ.TO_1d_OBV_2026-11-03.html" target="_blank" rel="noopener">Ouvrir</a></td>
+        <tr>
+          <th scope="row">NVDA<small>NVIDIA</small></th>
+          <td><a href="Trades_NVDA_1d_RSI_2026-11-03.html" target="_blank" rel="noopener">Ouvrir</a></td>
+          <td><a href="Trades_NVDA_1d_ZLEMA21_2026-11-03.html" target="_blank" rel="noopener">Ouvrir</a></td>
+          <td><a href="Trades_NVDA_1d_KC_2026-11-03.html" target="_blank" rel="noopener">Ouvrir</a></td>
+          <td><a href="Trades_NVDA_1d_OBV_2026-11-03.html" target="_blank" rel="noopener">Ouvrir</a></td>
+        </tr>
+        <tr>
+          <th scope="row">ECO<small>Okeanis Eco Tankers</small></th>
+          <td><a href="Trades_ECO_1d_RSI_2026-11-03.html" target="_blank" rel="noopener">Ouvrir</a></td>
+          <td><a href="Trades_ECO_1d_ZLEMA21_2026-11-03.html" target="_blank" rel="noopener">Ouvrir</a></td>
+          <td><a href="Trades_ECO_1d_KC_2026-11-03.html" target="_blank" rel="noopener">Ouvrir</a></td>
+          <td><a href="Trades_ECO_1d_OBV_2026-11-03.html" target="_blank" rel="noopener">Ouvrir</a></td>
+        </tr>
+        <tr>
+          <th scope="row">ENB<small>Enbridge</small></th>
+          <td><a href="Trades_ENB_1d_RSI_2026-11-03.html" target="_blank" rel="noopener">Ouvrir</a></td>
+          <td><a href="Trades_ENB_1d_ZLEMA21_2026-11-03.html" target="_blank" rel="noopener">Ouvrir</a></td>
+          <td><a href="Trades_ENB_1d_KC_2026-11-03.html" target="_blank" rel="noopener">Ouvrir</a></td>
+          <td><a href="Trades_ENB_1d_OBV_2026-11-03.html" target="_blank" rel="noopener">Ouvrir</a></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <script src="index.js"></script>
+
+  <h2>Stratégies</h2>
+  <dl>
+    <dt>RSI</dt>
+    <dd>Relative Strength Index, indicateur de momentum.</dd>
+    <dt>ZLEMA 21</dt>
+    <dd>Moyenne mobile exponentielle à délai nul, sur 21 périodes.</dd>
+    <dt>Keltner (KC)</dt>
+    <dd>Canal de Keltner, bandes de volatilité autour d’une moyenne mobile.</dd>
+    <dt>OBV</dt>
+    <dd>On-Balance Volume, indicateur de volume cumulé.</dd>
+  </dl>
+
+  <footer>Paul Marie – rapports générés le 3 novembre 2026.</footer>
+</main>
 </body>
 </html>
